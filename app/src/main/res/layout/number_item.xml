@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<magiclivewall.wall.com.smsdemo.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/number"
+        android:text="2222"
+        android:layout_width="match_parent"
+        android:layout_height="75dp" />
+
+</magiclivewall.wall.com.smsdemo.MyLinearLayout>
