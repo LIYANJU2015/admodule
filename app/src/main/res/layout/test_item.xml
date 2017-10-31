@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/colorAccent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <CheckBox
+        android:text="test mode"
+        android:id="@+id/checkbox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:checked="true"
+            android:text="material_dialog"
+            android:id="@+id/checkbox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <Button
         android:gravity="center"
-        android:text="223423asr"
-        android:id="@+id/text11"
+        android:text="mid ad show"
+        android:id="@+id/mid_ad_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+    <Button
+        android:gravity="center"
+        android:text="big ad show"
+        android:id="@+id/big_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 

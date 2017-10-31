@@ -14,27 +14,13 @@ import com.google.android.gms.ads.MobileAds;
 
 public class AdModule {
 
-    private static Context sContext;
-
-    private static AdCallBack sAdCallBack;
-
     private static AdModule sAdModule;
 
-    private AdMobCore mAdMobCore;
-
-    private AdMaterialDialogStyle mAdMaterialDialogStyle;
-    private AdNiftyDialogStyle mAdNifyDialogStyle;
-
-    public static void init(AdCallBack adCallBack) {
-        sContext = adCallBack.getContext();
-        sAdCallBack = adCallBack;
-        Utils.sContext = sContext;
-
-        MobileAds.initialize(sContext, adCallBack.getAppId());
+    public static synchronized void init(AdCallBack adCallBack) {
+       _AdModule.init(adCallBack);
     }
 
     private AdModule() {
-        mAdMobCore = new AdMobCore(sContext);
     }
 
     public static AdModule getInstance() {
@@ -49,25 +35,19 @@ public class AdModule {
     }
 
     public IPopupDialog createMaterialDialog() {
-        if (mAdMaterialDialogStyle == null) {
-            mAdMaterialDialogStyle = new AdMaterialDialogStyle(mAdMobCore);
-        }
-        return mAdMaterialDialogStyle;
+        return _AdModule.getInstance().createMaterialDialog();
     }
 
     public IPopupDialog createNiftyDialog() {
-        if (mAdNifyDialogStyle == null) {
-            mAdNifyDialogStyle = new AdNiftyDialogStyle(mAdMobCore);
-        }
-        return mAdNifyDialogStyle;
+        return _AdModule.getInstance().createNiftyDialog();
     }
 
     public IAdMob getAdMob() {
-        return mAdMobCore;
+        return _AdModule.getInstance().getAdMob();
     }
 
     public static AdCallBack getAdCallBack() {
-        return sAdCallBack;
+        return _AdModule.getAdCallBack();
     }
 
     public interface AdCallBack {
